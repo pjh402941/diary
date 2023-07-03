@@ -35,24 +35,20 @@
     <div id="container">
       <div id="grayArea">
         <img src="/images/deltete.png" id="delete" onclick="deleteContent()" />
-        <img
-          src="/images/correctionBox.png"
-          id="correctionBox"
-          onclick="correctionContent()"
-        />
-        <img
-          src="/images/correction.png"
-          id="correction"
-          onclick="correctionContent()"
-        />
         <div id="scroll">
           <div id="whiteBoxArea">
             <div id="whiteBox">
-              <div id="whiteBoxContent">
+              <form id="whiteBoxContent" id="post">
+                <input
+                  type="submit"
+                  value="수정"
+                  id="correction"
+                  onclick="correctionContent()"
+                />
                 <div id="date"></div>
                 <hr id="line" />
-                <textarea id="content"></textarea>
-              </div>
+                <input type="text" required id="content" />
+              </form>
             </div>
           </div>
 
@@ -85,5 +81,4 @@
     </div>
   </body>
   <script src="/script/check.js"></script>
-  <script src="/script/comment.js"></script>
 </html>

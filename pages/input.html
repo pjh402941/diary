@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
     />
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>일기작성</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,22 +35,28 @@
       <div id="grayArea">
         <div id="whiteBoxArea">
           <div id="whiteBox">
-            <div id="whiteBoxContent">
+            <form
+              id="whiteBoxContent"
+              onsubmit="return saveDiary()"
+              method="post"
+            >
               <div id="date"></div>
               <hr id="line" />
               <img src="/images/graypic.png" id="img" width="240px" />
-              <textarea id="content"></textarea>
-            </div>
+              <input
+                type="text"
+                required
+                placeholder="오늘 무슨 일이 있었냐면..."
+                id="content"
+              />
+              <input type="submit" value="저장" id="save" />
+            </form>
           </div>
         </div>
       </div>
-
       <img src="/images/Rectangle 8.png" id="greenBox" width="390px" />
-      <div id="greenArea">
-        <img src="/images/circle.png" id="circle" onclick="saveDiary()" />
-        <img src="/images/save.png" id="save" onclick="saveDiary()" />
-        <img src="/images/image.png" id="image" width="43px" />
-      </div>
+      <img src="/images/circle.png" id="circle" />
+      <img src="/images/image.png" id="image" width="43px" />
     </div>
     <script src="/script/input.js"></script>
   </body>

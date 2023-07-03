@@ -15,31 +15,9 @@ function getTodayLabel(num) {
 document.getElementById("date").innerHTML =
   year + "년 " + month + "월 " + date + "일 " + getTodayLabel(day) + "요일";
 
-//저장, 메인페이지에 넘겨주기
-let memos = JSON.parse(sessionStorage.getItem("memos"));
-memos = memos ?? [];
+//저장 후 메인페이지 이동
 
 function saveDiary() {
-  let newMemo = {};
-  let memoDate =
-    year + "년 " + month + "월 " + date + "일 " + getTodayLabel(day) + "요일";
-  let memoText = document.getElementById("content").value;
-  let memosL = JSON.parse(sessionStorage.getItem("memos")) || [];
-  let id = memosL.length;
-  id = id ?? 0;
-
-  let memos = JSON.parse(sessionStorage.getItem("memos"));
-  memos = memos ?? [];
-
-  newMemo.id = id;
-  newMemo.date = memoDate;
-  newMemo.content = memoText;
-
-  memos.push(newMemo);
-
-  sessionStorage.setItem("memos", JSON.stringify(memos));
-
-  window.location.href = `/pages/main.html?memo=${encodeURIComponent(
-    JSON.stringify(newMemo)
-  )}`;
+  window.location.href = "main.html";
+  return false;
 }
